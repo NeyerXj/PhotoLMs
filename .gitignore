@@ -1,0 +1,15 @@
+.DS_Store
+.idea/
+.venv/
+.cache/
+.build/
+__pycache__/
+*.pyc
+
+PhotoLM.app/
+PhotoLM.zip
+
+input/
+output/
+
+*.log
