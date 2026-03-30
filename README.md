@@ -2,6 +2,64 @@
 
 Нативное macOS приложение на SwiftUI (MVVM) для Viewer-редактирования изображений с inpainting (LaMa) и упаковкой в `.app` с вшитым Python runtime.
 
+## Вариант без Xcode (только Python, для новичков)
+
+Этот вариант не требует сборки `.app`. Ты запускаешь Viewer прямо через Python.
+
+### 1) Установить Python 3.11
+
+Скачай и установи Python с [python.org](https://www.python.org/downloads/macos/).
+
+Проверь:
+
+```bash
+python3 --version
+```
+
+### 2) Скачать проект
+
+```bash
+git clone https://github.com/NeyerXj/PhotoLMs.git
+cd PhotoLMs
+```
+
+### 3) Установить зависимости одной командой
+
+```bash
+./Scripts/python_setup.sh
+```
+
+### 4) Положить картинки
+
+- Исходники: в папку `input/`
+- Редактируемые файлы: в папку `output/` (скрипт сам скопирует из `input`)
+
+### 5) Запустить Viewer
+
+```bash
+./Scripts/python_run_viewer.sh
+```
+
+Клавиши в Viewer:
+
+- `ЛКМ` рисовать маску
+- `ПКМ` стирать маску
+- `E` применить inpainting
+- `S` сохранить
+- `N/P` следующее/предыдущее изображение
+- `Q` выход
+
+Дополнительно:
+
+- запуск со своими папками:
+  ```bash
+  ./Scripts/python_run_viewer.sh /путь/к/input /путь/к/output
+  ```
+- если нужно каждый запуск полностью перезаписывать `output` из `input`:
+  ```bash
+  OVERWRITE=1 ./Scripts/python_run_viewer.sh
+  ```
+
 ## Возможности
 
 - Viewer-only UI: выбор `input`/`output`, запуск редактора, сохранение правок
